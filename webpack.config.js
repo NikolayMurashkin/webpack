@@ -17,5 +17,17 @@ module.exports = (env) => {
             }),
             new webpack.ProgressPlugin(), // в проде как правило не юзают, т.к. может сильно замедлять сборку
         ],
+        module: {
+            rules: [
+                {
+                    test: /\.tsx?$/,
+                    use: 'ts-loader',
+                    exclude: /node_modules/,
+                },
+            ],
+        },
+        resolve: {
+            extensions: ['.tsx', '.ts', '.js'],
+        },
     };
 };
