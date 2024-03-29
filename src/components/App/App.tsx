@@ -11,8 +11,18 @@ export const App = () => {
     const increment = () => setCount((prev) => prev + 1);
     const decrement = () => setCount((prev) => prev - 1);
     const clear = () => setCount(0);
+
+    if (__PLATFORM__ === 'mobile') {
+        return <div>MOBILE PLATFORM</div>;
+    }
+
+    if (__MODE__ === 'development') {
+        // addDevTools();
+    }
+
     return (
         <div>
+            PLATFORM:{__PLATFORM__}
             <div>
                 <img src={avatarPng} alt='avatar' width={50} height={50} />
                 <img src={avatarJpg} alt='avatar' width={50} height={50} />
