@@ -6,6 +6,7 @@ import { BuildMode } from './config/build/types/types';
 interface EnvVariables {
     mode: BuildMode;
     port: number;
+    analyzer: boolean;
 }
 
 export default (env: EnvVariables) => {
@@ -19,6 +20,7 @@ export default (env: EnvVariables) => {
         mode: env.mode ?? 'development',
         port: env.port ?? 4000,
         paths,
+        analyzer: env.analyzer ?? false,
     });
 
     return config;
