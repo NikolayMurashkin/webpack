@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { App } from './components/App';
-import { About, Shop } from './pages';
+import { App } from '@/components/App/App';
+import { About, Shop } from '@/pages';
 
 const root = document.getElementById('root');
 
