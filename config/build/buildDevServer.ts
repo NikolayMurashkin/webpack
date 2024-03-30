@@ -7,5 +7,6 @@ export function buildDevServer({ port }: BuildOptions): Configuration {
         open: true,
         // если развадать статикучерез NGinxто надо делать проксирование на index.html
         historyApiFallback: true,
+        hot: true,
     };
 }
