@@ -21,7 +21,7 @@ export const App = () => {
     }
 
     return (
-        <div>
+        <div data-testid='App'>
             PLATFORM:{__PLATFORM__}
             <div>
                 <img src={avatarPng} alt='avatar' width={50} height={50} />
