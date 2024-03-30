@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { Configuration, DefinePlugin, ProgressPlugin } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/types';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 export function buildPlugins({
     mode,
@@ -25,6 +26,7 @@ export function buildPlugins({
 
     if (isDev) {
         plugins.push(new ProgressPlugin()); // в проде как правило не юзают, т.к. может сильно замедлять сборку
+        plugins.push(new ForkTsCheckerWebpackPlugin()); // Выносит проверку типов в отдельный процесс не нагружая сборку
     }
 
     if (isProd) {
